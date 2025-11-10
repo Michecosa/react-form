@@ -34,15 +34,13 @@ export default function Articoli() {
 
     if (newArticle.length === 0) return;
 
-    let maxId = 0;
-    articles.forEach((article) => {
-      if (article.id > maxId) {
-        maxId = article.id;
-      }
-    });
+    let lastId = 0;
+    if (articles.length > 0) {
+      lastId = articles[articles.length - 1].id;
+    }
 
     const nuovoArticolo = {
-      id: maxId + 1,
+      id: lastId + 1,
       titolo: newArticle,
       autore: "Anonimo",
     };
