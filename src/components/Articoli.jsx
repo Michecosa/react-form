@@ -19,7 +19,7 @@ export default function ArticoliList() {
     },
   ]);
 
-  const [articles, setArticles] = useState([articoli]);
+  const [articles, setArticles] = useState(articoli);
   const [newArticle, setNewArticles] = useState("");
 
   return (
