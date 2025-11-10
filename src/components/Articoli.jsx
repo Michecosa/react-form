@@ -11,7 +11,7 @@ export default function Articoli() {
 
   const deleteArticle = (indexDaEliminare) => {
     const articlesFiltrate = articles.filter(
-      (inutile, indice) => indice !== indexDaEliminare
+      (articolo) => articolo.id !== indexDaEliminare
     );
     setArticles(articlesFiltrate);
   };
@@ -20,8 +20,8 @@ export default function Articoli() {
     const nuovoTitolo = prompt("Nuovo titolo dell'articolo:");
     if (!nuovoTitolo) return;
 
-    const nuoviArticoli = articles.map((articolo, indice) =>
-      indice === indexDaModificare
+    const nuoviArticoli = articles.map((articolo) =>
+      articolo.id === indexDaModificare
         ? { ...articolo, titolo: nuovoTitolo }
         : articolo
     );
