@@ -29,6 +29,18 @@ export default function ArticoliList() {
     setArticles(articlesFiltrate);
   };
 
+  const editArticle = (indexDaModificare) => {
+    const nuovoTitolo = prompt("Nuovo titolo dell'articolo:");
+
+    const nuoviArticoli = articles.map((articolo, indice) =>
+      indice === indexDaModificare
+        ? { ...articolo, titolo: nuovoTitolo }
+        : articolo
+    );
+
+    setArticles(nuoviArticoli);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
