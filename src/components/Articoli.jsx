@@ -22,6 +22,13 @@ export default function ArticoliList() {
   const [articles, setArticles] = useState(articoli);
   const [newArticle, setNewArticle] = useState("");
 
+  const deleteArticle = (indexDaEliminare) => {
+    const articlesFiltrate = articles.filter(
+      (task, indice) => indice !== indexDaEliminare
+    );
+    setArticles(articlesFiltrate);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -55,13 +62,16 @@ export default function ArticoliList() {
       </form>
 
       <ul className="list-group">
-        {articles.map((articolo) => (
+        {articles.map((articolo, index) => (
           <li
             key={articolo.id}
             className="list-group-item d-flex justify-content-between align-items-center"
           >
             {articolo.titolo}
-            <button className="btn btn-sm btn-danger">
+            <button
+              className="btn btn-sm btn-danger"
+              onClick={() => deleteArticle(index)}
+            >
               <i className="bi bi-trash-fill"></i>
             </button>
           </li>
