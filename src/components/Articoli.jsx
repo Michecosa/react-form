@@ -19,10 +19,23 @@ export default function ArticoliList() {
     },
   ]);
 
+  const [articles, setArticles] = useState([articoli]);
+  const [newArticle, setNewArticles] = useState("");
+
   return (
     <div className="container mt-5">
       <h2 className="mb-4">Articoli</h2>
 
+      <form className="input-group mb-3">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Aggiungi un articolo..."
+        />
+        <button type="submit" className="btn btn-primary">
+          Aggiungi
+        </button>
+      </form>
       <ul className="list-group">
         {articoli.map((articolo) => (
           <li key={articolo.id} className="list-group-item">
