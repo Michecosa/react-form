@@ -75,12 +75,20 @@ export default function ArticoliList() {
             className="list-group-item d-flex justify-content-between align-items-center"
           >
             {articolo.titolo}
-            <button
-              className="btn btn-sm btn-danger"
-              onClick={() => deleteArticle(index)}
-            >
-              <i className="bi bi-trash-fill"></i>
-            </button>
+            <div className="d-flex gap-2">
+              <button
+                className="btn btn-sm btn-secondary"
+                onClick={() => editArticle(index)}
+              >
+                <i className="bi bi-pen-fill"></i>
+              </button>
+              <button
+                className="btn btn-sm btn-danger"
+                onClick={() => deleteArticle(index)}
+              >
+                <i className="bi bi-trash-fill"></i>
+              </button>
+            </div>
           </li>
         ))}
       </ul>
