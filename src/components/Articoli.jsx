@@ -56,8 +56,14 @@ export default function ArticoliList() {
 
       <ul className="list-group">
         {articles.map((articolo) => (
-          <li key={articolo.id} className="list-group-item">
+          <li
+            key={articolo.id}
+            className="list-group-item d-flex justify-content-between align-items-center"
+          >
             {articolo.titolo}
+            <button className="btn btn-sm btn-danger">
+              <i className="bi bi-trash-fill"></i>
+            </button>
           </li>
         ))}
       </ul>
