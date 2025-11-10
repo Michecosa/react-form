@@ -31,6 +31,7 @@ export default function ArticoliList() {
 
   const editArticle = (indexDaModificare) => {
     const nuovoTitolo = prompt("Nuovo titolo dell'articolo:");
+    if (!nuovoTitolo) return;
 
     const nuoviArticoli = articles.map((articolo, indice) =>
       indice === indexDaModificare
