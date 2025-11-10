@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function ArticoliList() {
+export default function Articoli() {
   const [articoli] = useState([
     {
       id: 1,
