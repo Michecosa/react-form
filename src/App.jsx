@@ -1,5 +1,11 @@
+import Articoli from "./components/Articoli";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <Articoli />
+    </>
+  );
 }
 
 export default App;
