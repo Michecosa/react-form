@@ -1,25 +1,12 @@
 import { useState } from "react";
 
 export default function Articoli() {
-  const [articoli] = useState([
-    {
-      id: 1,
-      titolo: "Learn PHP",
-      autore: "Michela",
-    },
-    {
-      id: 2,
-      titolo: "(Don't) Learn PHP",
-      autore: "Della",
-    },
-    {
-      id: 3,
-      titolo: "(Maybe) Learn PHP",
-      autore: "Gatta",
-    },
+  const [articles, setArticles] = useState([
+    { id: 1, titolo: "Learn PHP", autore: "Michela" },
+    { id: 2, titolo: "(Don't) Learn PHP", autore: "Della" },
+    { id: 3, titolo: "(Maybe) Learn PHP", autore: "Gatta" },
   ]);
 
-  const [articles, setArticles] = useState(articoli);
   const [newArticle, setNewArticle] = useState("");
 
   const deleteArticle = (indexDaEliminare) => {
