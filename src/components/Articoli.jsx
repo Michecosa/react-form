@@ -11,7 +11,7 @@ export default function Articoli() {
 
   const deleteArticle = (indexDaEliminare) => {
     const articlesFiltrate = articles.filter(
-      (task, indice) => indice !== indexDaEliminare
+      (inutile, indice) => indice !== indexDaEliminare
     );
     setArticles(articlesFiltrate);
   };
