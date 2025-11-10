@@ -20,24 +20,42 @@ export default function ArticoliList() {
   ]);
 
   const [articles, setArticles] = useState(articoli);
-  const [newArticle, setNewArticles] = useState("");
+  const [newArticle, setNewArticle] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (newArticle.length === 0) return;
+
+    const nuovoArticolo = {
+      id: articles.length + 1,
+      titolo: newArticle,
+      autore: "Anonimo",
+    };
+
+    setArticles([...articles, nuovoArticolo]);
+    setNewArticle("");
+  };
 
   return (
     <div className="container mt-5">
       <h2 className="mb-4">Articoli</h2>
 
-      <form className="input-group mb-3">
+      <form className="input-group mb-3" onSubmit={handleSubmit}>
         <input
           type="text"
           className="form-control"
           placeholder="Aggiungi un articolo..."
+          value={newArticle}
+          onChange={(e) => setNewArticle(e.target.value)}
         />
         <button type="submit" className="btn btn-primary">
           Aggiungi
         </button>
       </form>
+
       <ul className="list-group">
-        {articoli.map((articolo) => (
+        {articles.map((articolo) => (
           <li key={articolo.id} className="list-group-item">
             {articolo.titolo}
           </li>
