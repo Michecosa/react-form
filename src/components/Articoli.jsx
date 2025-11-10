@@ -69,7 +69,7 @@ export default function Articoli() {
       </form>
 
       <ul className="list-group">
-        {articles.map((articolo, index) => (
+        {articles.map((articolo) => (
           <li
             key={articolo.id}
             className="list-group-item d-flex justify-content-between align-items-center"
@@ -78,13 +78,13 @@ export default function Articoli() {
             <div className="d-flex gap-2">
               <button
                 className="btn btn-sm btn-secondary"
-                onClick={() => editArticle(index)}
+                onClick={() => editArticle(articolo.id)}
               >
                 <i className="bi bi-pen-fill"></i>
               </button>
               <button
                 className="btn btn-sm btn-danger"
-                onClick={() => deleteArticle(index)}
+                onClick={() => deleteArticle(articolo.id)}
               >
                 <i className="bi bi-trash-fill"></i>
               </button>
